@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -13,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/validations";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirect") || "/dashboard";
@@ -104,5 +105,19 @@ export default function LoginPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="w-full max-w-md">
+        <div className="bg-card border border-border rounded-2xl p-8 h-64 flex items-center justify-center">
+          <Loader2 className="w-6 h-6 animate-spin text-primary" />
+        </div>
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   );
 }
