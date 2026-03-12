@@ -13,7 +13,7 @@ Nepal's premier second-hand auction marketplace. Buy and sell with confidence.
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/bin-auction.git
+git clone https://github.com/sumanbasnetdev2025-gif/bin-auction.git
 cd bin-auction
 ```
 
