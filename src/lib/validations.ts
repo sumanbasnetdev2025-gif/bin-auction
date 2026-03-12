@@ -16,7 +16,7 @@ export const loginSchema = z.object({
 export const createListingSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters").max(100),
   description: z.string().min(20, "Description must be at least 20 characters").max(2000),
-  category_id: z.number({ required_error: "Please select a category" }),
+  category_id: z.number().min(1, "Please select a category"),
   starting_price: z.number().min(1, "Starting price must be at least 1 NPR"),
   auction_end_time: z.string().min(1, "Please set an auction end time"),
   image_urls: z.array(z.string()).min(1, "Please upload at least one image").max(5),
