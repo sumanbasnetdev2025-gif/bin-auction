@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#7B0D0D"/>
+    </linearGradient>
+    <linearGradient id="gavel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFD0C8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#00000040"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded background -->
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+
+  <!-- Inner subtle glow ring -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none"
+        stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+
+  <!-- Gavel head (rotated 45deg around center) -->
+  <g transform="translate(32,32) rotate(-40) translate(-32,-32)" filter="url(#shadow)">
+    <!-- Gavel head block -->
+    <rect x="29" y="12" width="18" height="9" rx="3" fill="url(#gavel)"/>
+    <!-- Gavel head band -->
+    <rect x="33" y="12" width="4" height="9" rx="0" fill="rgba(0,0,0,0.12)"/>
+    <!-- Handle -->
+    <rect x="35.5" y="20" width="5" height="20" rx="2.5" fill="url(#gavel)"/>
+  </g>
+
+  <!-- Bold "B" lettermark -->
+  <text x="22" y="48"
+        font-family="'Arial Black', Arial, sans-serif"
+        font-weight="900"
+        font-size="28"
+        fill="white"
+        opacity="0.95"
+        filter="url(#shadow)">B</text>
+
+  <!-- Small "IN" subscript -->
+  <text x="38" y="48"
+        font-family="Arial, sans-serif"
+        font-weight="700"
+        font-size="13"
+        fill="rgba(255,255,255,0.7)">IN</text>
+</svg>
