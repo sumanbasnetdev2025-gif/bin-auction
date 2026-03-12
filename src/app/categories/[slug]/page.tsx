@@ -39,7 +39,7 @@ function CardSkeleton() {
   );
 }
 
-function EmptyState({ category, style }: { category: typeof CATEGORIES[0]; style: typeof categoryStyles[string] }) {
+function EmptyState({ category, style }: { category: { slug: string; name: string; description?: string }; style: typeof categoryStyles[string] }) {
   const Icon = style.icon;
   const otherCategories = CATEGORIES.filter((c) => c.slug !== category.slug).slice(0, 4);
 
